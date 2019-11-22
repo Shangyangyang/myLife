@@ -148,7 +148,6 @@ export default {
 							},
 						
 						});
-						console.log('没走success，直接走这里。');
 					} else if (res.cancel) {
 						console.log('用户点击取消');
 					}
