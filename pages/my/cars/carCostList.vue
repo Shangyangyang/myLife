@@ -73,6 +73,11 @@ export default {
 	onLoad() {
 		this.init();
 	},
+	onReady() {
+		console.log('carCostList: onReady');
+		let user = this.$store.getters.getUser
+		console.log(user);
+	},
 	methods: {
 		init() {
 			this.fetchData();

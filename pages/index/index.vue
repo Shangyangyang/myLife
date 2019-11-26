@@ -34,6 +34,25 @@ export default {
 	},
 	methods: {
 		NavChange: function(e) {
+			// this.$store.commit('saveUser', {
+			// 	name: 'admin',
+			// 	value: '123321'
+			// });
+			if(e.currentTarget.dataset.cur == 'my'){
+				// 验证登录
+				if(JSON.stringify(this.$store.getters.getUser) == '{}'){
+					// 没有登录
+					uni.showToast({
+						title:'请先登录'
+					})
+					setTimeout(function(){
+						uni.navigateTo({
+							url:'../sys/login/login'
+						})
+					}, 1000)
+					
+				}
+			}
 			this.PageCur = e.currentTarget.dataset.cur;
 		}
 	}

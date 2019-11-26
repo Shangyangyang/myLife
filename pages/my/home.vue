@@ -1,4 +1,4 @@
-<template name="basics">
+<template name="my">
 	<view>
 		<scroll-view scroll-y class="page">
 			<image src="../../static/BasicsBg.png"
@@ -18,7 +18,7 @@
 
 <script>
 	export default {
-		name: "basics",
+		name: "my",
 		data() {
 			return {
 				elements: [
@@ -40,7 +40,9 @@
 			};
 		},
 		onShow() {
-			console.log("success")
+		},
+		onReady() {
+			console.log('my-onReady');
 		}
 	}
 </script>
