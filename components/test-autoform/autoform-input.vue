@@ -2,7 +2,7 @@
 	<view class="cu-form-group margin-top" v-show="config.showFlag == false ? false : true" 
 		:style="styleStr">
 		<view class="title">{{ config.name }}</view>
-		<input class="uni-input" 
+		<input class="uni-input" :password="isPwd"
 			:value="defaultValue" :placeholder="placeholder" maxlength="5" :type="inputType" 
 			@blur="valueChange" :maxlength="config.type.maxL"/>
 	</view>
@@ -26,6 +26,9 @@ export default {
 		},
 		inputType() {
 			return this.config.type.type ? this.config.type.type : 'text';
+		},
+		isPwd() {
+			return !this.config.type.isPwd ? false : true;
 		},
 		styleStr(){
 			return this.config.validFlag && this.validFlag ? 'border: #fff 0px solid;' : 'border: #ff0000 1px solid;'
