@@ -45,6 +45,9 @@
 				type: [Boolean, String],
 				default: false
 			},
+			url: {
+				type: [String]
+			},
 			bgImage: {
 				type: String,
 				default: ''
@@ -52,9 +55,18 @@
 		},
 		methods: {
 			BackPage() {
-				uni.navigateBack({
-					delta: 1
-				});
+				console.log(this.url);
+				console.log(typeof this.url);
+				if(this.url){
+					uni.navigateTo({
+						url: this.url
+					})
+				} else {
+					uni.navigateBack({
+						delta: 1
+					});
+				}
+				
 			}
 		}
 	}

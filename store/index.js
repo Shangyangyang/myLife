@@ -9,10 +9,8 @@ const state = {
 
 const mutations = {
 	saveUser(state, bean) {
-		console.log(`saveUser-bean:`);
-		console.log(bean);
 		state.user = bean;
-		localStorage.setItem('user', state.bean);
+		// localStorage.setItem('user', state.bean);
 	},
 	clearAllData(state) {
 		state.bean = {};
@@ -27,9 +25,9 @@ const actions = {
 
 const getters = {
 	getUser: state => {
-		if (state.user === undefined || state.user === null || state.user === '') {
-			state.user = localStorage.getItem('user');
-		}
+		// if (state.user === undefined || state.user === null || state.user === '') {
+		// 	state.user = localStorage.getItem('user');
+		// }
 		return state.user;
 	},
 }

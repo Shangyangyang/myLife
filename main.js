@@ -24,6 +24,9 @@ Vue.config.productionTip = false
 import ServiceApi from './common/ServiceApi.js'
 Vue.prototype.$serviceApi = ServiceApi;
 
+import checkLogin from './components/utils/CheckLogin.vue'
+Vue.component('checkLogin', checkLogin)
+
 // 注册缓存器
 Vue.use(MinCache)
 // 设置默认缓存时间
