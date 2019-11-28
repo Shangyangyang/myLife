@@ -118,7 +118,7 @@
 		}, {
 			"path": "pages/my/cars/carCostForm"
 		}, {
-			"path": "pages/sys/login/login"
+			"path": "pages/index/login/login"
 		}
 	],
 	"globalStyle": {

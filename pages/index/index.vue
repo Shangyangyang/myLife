@@ -47,10 +47,10 @@ export default {
 					})
 					setTimeout(function(){
 						uni.navigateTo({
-							url:'../sys/login/login'
+							url:'./login/login'
 						})
 					}, 1000)
-					
+					return false
 				}
 			}
 			this.PageCur = e.currentTarget.dataset.cur;
