@@ -55,7 +55,7 @@ export default {
 						
 						if(res.data.data && res.data.data2){
 							this.$store.commit('saveUser', res.data.data)
-							// uni.setStorageSync('cookieKey', res.data.data2)
+							uni.setStorageSync('cookieKey', res.data.data2)
 							Cookies.set('JSESSIONID', res.data.data2)
 							
 							uni.navigateTo({
