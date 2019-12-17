@@ -61,7 +61,7 @@ export default {
 					},
 					success: res => {
 						
-						if(res.data.status != 200){
+						if(res.data.status != 1){
 							uni.showToast({
 								icon: 'none',
 								title: '保存失败，请检查网络'

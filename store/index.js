@@ -10,7 +10,7 @@ const state = {
 const mutations = {
 	saveUser(state, bean) {
 		state.user = bean;
-		// localStorage.setItem('user', state.bean);
+		uni.setStorage('user', bean)
 	},
 	clearAllData(state) {
 		state.bean = {};
@@ -18,16 +18,19 @@ const mutations = {
 }
 
 const actions = {
-	setUser({commit}, bean) {
+	setUser({
+		commit
+	}, bean) {
 		commit('saveUser', bean);
 	},
 }
 
 const getters = {
 	getUser: state => {
-		// if (state.user === undefined || state.user === null || state.user === '') {
-		// 	state.user = localStorage.getItem('user');
-		// }
+		if (state.user === undefined || state.user === null || state.user === '') {
+			state.user = uni.getStorageSync('user')
+		}
+
 		return state.user;
 	},
 }

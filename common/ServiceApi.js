@@ -1,5 +1,5 @@
-// const BASE_URL = 'http://localhost:8080/'
-const BASE_URL = 'http://mylife.free.idcfengye.com/'
+const BASE_URL = 'http://localhost:8080/'
+// const BASE_URL = 'http://mylife.free.idcfengye.com/'
 
 const SERVICE_API = {
 	// 汽车花费

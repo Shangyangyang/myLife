@@ -48,8 +48,23 @@
 					arr.forEach(by => {
 						let subArr = by.split('=')
 						if (data.field == subArr[0]) obj.showFlag = data.value == subArr[1]
+						// 转换必填非必填，这里写死了，后期有时间再改成配置型的。20191217
+						if(obj.valid.allowEmpty != undefined && obj.valid.allowEmpty != null){
+							obj.valid.allowEmpty = !obj.showFlag
+						}
 					})
 				})
+				
+				// 这里是验证的逻辑处理
+				// this.config.configList.filter(obj => obj.valid.showBy).forEach(obj => {
+				// 	let arr = obj.valid.showBy.split("&&")
+				// 	arr.forEach(by => {
+				// 		let subArr = by.split('=')
+				// 		if (data.field == subArr[0]) obj.showFlag = data.value == subArr[1]
+				// 	})
+				// })
+				
+				
 			},
 			// 验证
 			checkValid() {
@@ -59,11 +74,12 @@
 					// 自定义验证
 					if (item.valid) {
 						Object.keys(item.valid).forEach(key => {
+							console.log(key);
+							console.log(item.valid[key]);
 							switch (key) {
 								case 'allowEmpty':
-									
-									if (item.valid[key] != undefined ||
-										item.valid[key] != null ||
+									if ((item.valid[key] != undefined ||
+										item.valid[key] != null) &&
 										item.valid[key] != true) {
 										
 										if (!this.form[item.field]) {

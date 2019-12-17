@@ -28,7 +28,7 @@ import checkLogin from './components/utils/CheckLogin.vue'
 Vue.component('checkLogin', checkLogin)
 
 // 注册缓存器
-Vue.use(MinCache)
+// Vue.use(MinCache)
 // 设置默认缓存时间
 // Vue.use(MinCache, {timeout: 600})
 
