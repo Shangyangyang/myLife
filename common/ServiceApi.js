@@ -6,6 +6,8 @@ const SERVICE_API = {
 	COST_CAR_LIST: BASE_URL + 'cost/car/list',
 	COST_CAR_DELETE: BASE_URL + 'cost/car/delete',
 	COST_CAR_SAVE: BASE_URL + 'cost/car/save',
+	COST_CAR_GETOILWEAR: BASE_URL + 'cost/car/getOilWear',
+	COST_CAR_GETJSONSTR: BASE_URL + 'cost/car/getJsonStr',
 	
 	// 系统管理
 	// 字典表

@@ -7,6 +7,7 @@
 		<view class="padding bg-white" style="align-content: center;">
 			<view class="flex flex-wrap">
 				<button class="bg-blue round lg shadow" @tap="toAdd">加一笔</button>
+				<button class="cu-btn bg-grey lg" @tap="toYouhao">油耗</button>
 				<!-- <button class="bg-blue round lg shadow">统计</button> -->
 			</view>
 		</view>
@@ -74,7 +75,6 @@ export default {
 		this.init();
 	},
 	onReady() {
-		console.log('carCostList: onReady');
 		let user = this.$store.getters.getUser
 		console.log(user);
 	},
@@ -119,6 +119,11 @@ export default {
 		toAdd() {
 			uni.navigateTo({
 				url: 'carCostForm?isAdd=true'
+			})
+		},
+		toYouhao(){
+			uni.navigateTo({
+				url: 'carCostTongji'
 			})
 		},
 		toEdit(car) {},
@@ -174,7 +179,7 @@ export default {
 			});
 		},
 		ListTouchStart(e) {this.listTouchStart = e.touches[0].pageX;},
-		ListTouchMove(e) {this.listTouchDirection = e.touches[0].pageX - this.listTouchStart > 0 ? 'right' : 'left';},
+		ListTouchMove(e) {this.listTouchDirection = e.touches[0].pageX - this.listTouchStart > -70 ? 'right' : 'left';},
 		ListTouchEnd(e) {
 			if (this.listTouchDirection == 'left') {
 				this.modalName = e.currentTarget.dataset.target;

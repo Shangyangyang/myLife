@@ -118,6 +118,8 @@
 		}, {
 			"path": "pages/my/cars/carCostForm"
 		}, {
+			"path": "pages/my/cars/carCostTongji"
+		}, {
 			"path": "pages/index/login/login"
 		}
 	    ,{
